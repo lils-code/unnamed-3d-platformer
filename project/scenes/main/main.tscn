@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgdwd42bltix7"]
+
+[ext_resource type="PackedScene" uid="uid://camvcri7e11vi" path="res://addons/devblocks/blocks/colored_block.tscn" id="1_hhth8"]
+[ext_resource type="PackedScene" uid="uid://q8jhsrg6xsrv" path="res://scenes/player/player.tscn" id="2_lrgno"]
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="ColoredBlock" parent="." instance=ExtResource("1_hhth8")]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
+block_color_group = 2
+block_style = 7
+
+[node name="player" parent="." instance=ExtResource("2_lrgno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 6)

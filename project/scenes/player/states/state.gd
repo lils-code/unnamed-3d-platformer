@@ -1,13 +1,11 @@
 class_name State
 extends Node
 
-var player : Player
+@onready var player : Player = find_parent('player')
+var states : Dictionary
 
-func init(p : Player) -> void:
-	player = p
-	
-	for i in get_children():
-		i.init(p)
+func init():
+	states = player.states
 
 func enter() -> State:
 	return null

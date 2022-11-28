@@ -1,19 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgdwd42bltix7"]
+[gd_scene load_steps=4 format=3 uid="uid://bgdwd42bltix7"]
 
-[ext_resource type="PackedScene" uid="uid://camvcri7e11vi" path="res://addons/devblocks/blocks/colored_block.tscn" id="1_hhth8"]
-[ext_resource type="PackedScene" uid="uid://q8jhsrg6xsrv" path="res://scenes/player/player.tscn" id="2_lrgno"]
+[ext_resource type="PackedScene" uid="uid://q8jhsrg6xsrv" path="res://scenes/player/player.tscn" id="1_omk5p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4xv73"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tuwx2"]
 
 [node name="Main" type="Node"]
 
 [node name="World" type="Node3D" parent="."]
 
-[node name="ColoredBlock" parent="." instance=ExtResource("1_hhth8")]
-transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
-block_color_group = 2
-block_style = 7
+[node name="player" parent="World" instance=ExtResource("1_omk5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+start_state = null
 
-[node name="player" parent="." instance=ExtResource("2_lrgno")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+[node name="floor" type="StaticBody3D" parent="World"]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/floor"]
+shape = SubResource("BoxShape3D_4xv73")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/floor/CollisionShape3D"]
+mesh = SubResource("BoxMesh_tuwx2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 6)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy0vhr0ytyryw"]
+
+[ext_resource type="Script" path="res://scenes/player/states/in_air.gd" id="1_3jfqv"]
+
+[node name="in_air" type="Node"]
+script = ExtResource("1_3jfqv")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulsjy6ut6m5"]
+
+[ext_resource type="Script" path="res://scenes/player/states/jumps/jump.gd" id="1_23hef"]
+[ext_resource type="Curve" uid="uid://dnilws8h5of6j" path="res://scenes/player/states/jumps/jump_curve.tres" id="2_8qb23"]
+
+[node name="jump" type="Node"]
+script = ExtResource("1_23hef")
+jump_accel_curve = ExtResource("2_8qb23")

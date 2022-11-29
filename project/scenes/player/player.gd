@@ -5,8 +5,7 @@ extends CharacterBody3D
 @onready var state : State = get_node(start_state)
 
 var states : Dictionary
-
-#var can_double_jump : bool = true
+var h_accel_time : float = 0
 
 func _ready():
 	for i in $states.get_children():
@@ -45,6 +44,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func change(new : State) -> void:
-	state.exit()
+	state.exit(new)
+	new.enter(state)
+	
 	state = new
-	state.enter()

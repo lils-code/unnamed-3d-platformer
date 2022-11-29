@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ciil1tve6msrm"]
+[gd_scene load_steps=3 format=3 uid="uid://ciil1tve6msrm"]
 
 [ext_resource type="Script" path="res://scenes/player/states/move.gd" id="1_8nd2x"]
 
+[sub_resource type="Curve" id="Curve_teiap"]
+_data = [Vector2(0, 1), 0.0, -2.84048, 0, 1, Vector2(0.220833, 0.372727), -1.37143, -1.37143, 0, 0, Vector2(1, 0), -0.0574162, 0.0, 0, 0]
+point_count = 3
+
 [node name="move" type="Node"]
 script = ExtResource("1_8nd2x")
+vel_curve = SubResource("Curve_teiap")

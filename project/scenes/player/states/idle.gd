@@ -1,5 +1,5 @@
 class_name Idle
-extends 'state.gd'
+extends 'move.gd'
 
 func input(event : InputEvent) -> State:
 	

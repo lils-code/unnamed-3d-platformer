@@ -30,8 +30,12 @@ mesh = SubResource("CapsuleMesh_i8qwj")
 [node name="states" type="Node" parent="."]
 
 [node name="idle" parent="states" instance=ExtResource("4_0jybu")]
+speed = null
+accel_curve = null
 
 [node name="in_air" parent="states" instance=ExtResource("5_2rjgo")]
+speed = null
+accel_curve = null
 
 [node name="jump" parent="states" instance=ExtResource("4_thn6c")]
 

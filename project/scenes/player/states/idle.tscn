@@ -4,3 +4,5 @@
 
 [node name="idle" type="Node"]
 script = ExtResource("1_uujac")
+speed = null
+accel_curve = null

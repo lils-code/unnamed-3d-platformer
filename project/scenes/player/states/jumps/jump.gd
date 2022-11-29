@@ -7,11 +7,9 @@ extends '../in_air.gd'
 const max_jump_time : float = 0.1
 var jump_time : float = 0
 
-var disp : float = 0
 
-func enter() -> State:
+func enter(prev : State) -> State:
 	jump_time = 0
-	disp = 0
 	
 	return null
 
@@ -36,8 +34,7 @@ func physics_process(delta : float) -> State:
 	if t >= 1:
 		return states.in_air
 	
-	player.velocity.y += jump_accel_curve.sample(t) * jump_accel * delta
-	disp += player.velocity.y
+	player.accel.y = jump_accel_curve.sample(t) * jump_accel * delta
 	
 	jump_time += delta
 	
